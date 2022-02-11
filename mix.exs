@@ -109,7 +109,8 @@ defmodule CiExample.MixProject do
       {:decimal, "~> 2.0.0", override: true},
       {:statistics, "~> 0.6.2"},
       {:libgraph, "~> 0.13.3"},
-      {:numerix, "~> 0.7", github: "safwank/Numerix", ref: "ca2abe476c91172d05488f8a7703545fc9563c6f"},
+      {:numerix, "~> 0.7",
+       github: "safwank/Numerix", ref: "ca2abe476c91172d05488f8a7703545fc9563c6f"},
       {:flow, "~> 1.1.0"},
 
       # File uploads
