@@ -35,7 +35,7 @@ defmodule CiExample.MixProject do
       {:phoenix_ecto, "~> 4.4"},
       {:phoenix_live_dashboard, "~> 0.6"},
       {:phoenix_html, "~> 3.2.0"},
-      {:phoenix_live_reload, "~> 1.2", only: [:dev, :ngrok]},
+      {:phoenix_live_reload, "~> 1.2", only: [:dev]},
 
       # Telemetry
       {:telemetry_poller, "~> 0.5"},
@@ -56,8 +56,8 @@ defmodule CiExample.MixProject do
       {:ua_parser, "~> 1.8"},
       {:nimble_csv, "~> 1.1"},
       {:uuid, "~> 1.1"},
-      {:esbuild, "~> 0.2", runtime: Mix.env() in [:dev, :ngrok]},
-      {:dart_sass, "~> 0.3", runtime: Mix.env() in [:dev, :ngrok]},
+      {:esbuild, "~> 0.2", runtime: Mix.env() in [:dev]},
+      {:dart_sass, "~> 0.3", runtime: Mix.env() in [:dev]},
 
       # GraphQL
       {:absinthe, "~> 1.5"},
@@ -85,9 +85,9 @@ defmodule CiExample.MixProject do
       {:appsignal_phoenix, "~> 2.0.13"},
 
       # Static code analysis
-      {:credo, "~> 1.5", only: [:dev, :ngrok, :test]},
-      {:sobelow, "~> 0.11.1", only: [:dev, :ngrok, :test]},
-      {:dialyxir, "~> 1.0", only: [:dev, :ngrok], runtime: false},
+      {:credo, "~> 1.5", only: [:dev, :test]},
+      {:sobelow, "~> 0.11.1", only: [:dev, :test]},
+      {:dialyxir, "~> 1.0", only: [:dev], runtime: false},
 
       # Testing
       {:excoveralls, "~> 0.14", only: :test},
@@ -97,8 +97,8 @@ defmodule CiExample.MixProject do
       {:mock, "~> 0.3.7", only: :test},
       {:assertions, "~> 0.10", only: :test},
       {:exvcr, "~> 0.13.2", only: :test},
-      {:lcov_ex, "~> 0.2.0", only: [:dev, :ngrok, :test], runtime: false},
-      {:mix_test_watch, "~> 1.1", only: [:dev, :ngrok, :test], runtime: false},
+      {:lcov_ex, "~> 0.2.0", only: [:dev, :test], runtime: false},
+      {:mix_test_watch, "~> 1.1", only: [:dev, :test], runtime: false},
 
       # Formatting Forms
       {:number, "~> 1.0"},
