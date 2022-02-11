@@ -1,0 +1,47 @@
+name: Test CI Example
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review, labeled, unlabeled]
+  push:
+    branches:
+      - main
+
+jobs:
+  test:
+    name: Elixir Tests
+    runs-on: ubuntu-latest
+    env:
+      MIX_ENV: test
+    steps:
+      - uses: actions/checkout@v2
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: "24.2.1"
+          elixir-version: "1.13.3"
+      - uses: actions/cache@v2
+        id: cache
+        with:
+          path: |
+            deps
+            _build
+          key: ${{ runner.os }}-mix-${{ hashFiles('**/mix.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-mix-
+      - name: Install dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: |
+          mix do deps.get
+      - name: Check code formatting
+        run: mix format --check-formatted
+      - name: Compile dependencies
+        run: |
+          mix deps.compile
+      - name: Compile
+        run: |
+          mix compile --warnings-as-errors
+      - name: Static code analysis
+        run: mix credo --strict
+      - name: Security-focused static code analysis 
+        run: mix sobelow --config
+      - name: Run Elixir tests
+        run: mix test
