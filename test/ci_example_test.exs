@@ -3,6 +3,6 @@ defmodule CiExampleTest do
   doctest CiExample
 
   test "greets the world" do
-    assert CiExample.hello() == :world
+    assert CiExample.hello() == :elixir
   end
 end

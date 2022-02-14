@@ -9,10 +9,10 @@ defmodule CiExample do
   ## Examples
 
       iex> CiExample.hello()
-      :world
+      :elixir
 
   """
   def hello do
-    :world
+    :elixir
   end
 end
