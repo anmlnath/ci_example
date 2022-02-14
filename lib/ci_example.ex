@@ -1,6 +1,6 @@
 defmodule CiExample do
   @moduledoc """
-  Documentation for `CiExample`.
+  Documentation for `CI Example`.
   """
 
   @doc """
