@@ -33,6 +33,9 @@ jobs:
           mix do deps.get
       - name: Check code formatting
         run: mix format --check-formatted
+      - name: Compile AppSignal
+        run: |
+          mix deps.compile appsignal --include-children
       - name: Compile
         run: |
           mix compile --warnings-as-errors
