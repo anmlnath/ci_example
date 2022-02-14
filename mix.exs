@@ -141,6 +141,9 @@ defmodule CiExample.MixProject do
       # ImageMagick wrapper for editing images
       {:mogrify, "~> 0.9.0"},
 
+      # URL unfurling
+      {:furlex, github: "aai/furlex"},
+
       # timex includes tzdata for timezones
       {:timex, "~> 3.6"},
 
