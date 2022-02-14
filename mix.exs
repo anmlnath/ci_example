@@ -4,6 +4,7 @@ defmodule CiExample.MixProject do
   def project do
     [
       app: :ci_example,
+      description: "CI Example",
       version: "0.1.0",
       elixir: "~> 1.13",
       start_permanent: Mix.env() == :prod,
@@ -70,7 +71,7 @@ defmodule CiExample.MixProject do
       {:guardian, "~> 2.1"},
       {:guardian_db, "~> 2.0"},
       {:sans_password, "~> 1.1"},
-      {:swoosh, "~> 1.5.0"},
+      {:swoosh, "~> 1.6.0"},
       {:phoenix_swoosh, "~> 0.3.2"},
       {:qrcode, "~> 0.1"},
       {:ex_twilio, "~> 0.9.0"},
